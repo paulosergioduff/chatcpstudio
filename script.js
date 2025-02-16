@@ -135,19 +135,15 @@ document.getElementById('user-input').addEventListener('keydown', function(event
 
 // Lógica para o botão "Novo Chat"
 document.getElementById('new-chat-btn').addEventListener('click', function() {
-    const confirmacao = window.confirm("Tem certeza de que deseja iniciar um novo chat? Isso apagará a conversa atual.");
-    if (confirmacao) {
-        // Limpa o histórico na memória
-        chatHistory = [];
-        // Limpa o histórico no localStorage
-        localStorage.removeItem('chatHistory');
-        // Limpa o conteúdo do chat na interface
-        document.getElementById('chat-box').innerHTML = '';
-        // Limpa o campo de entrada de texto
-        document.getElementById('user-input').value = '';
-    }
+    // Limpa o histórico na memória
+    chatHistory = [];
+    // Limpa o histórico no localStorage
+    localStorage.removeItem('chatHistory');
+    // Limpa o conteúdo do chat na interface
+    document.getElementById('chat-box').innerHTML = '';
+    // Limpa o campo de entrada de texto
+    document.getElementById('user-input').value = '';
 });
-
 
 // Adicione este código ao final do script.js
 document.getElementById('post-btn').addEventListener('click', function() {
@@ -156,22 +152,24 @@ document.getElementById('post-btn').addEventListener('click', function() {
         return;
     }
 
-    console.log('Dados a serem enviados:', chatHistory); // <--- LOG DOS DADOS
+    console.log('Dados a serem enviados:', chatHistory);
 
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch('http://localhost:8000/sendChat', {  // Certifique-se de que está usando a URL correta
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(chatHistory)
     })
     .then(response => {
-        console.log('Status da resposta:', response.status); // <--- LOG DO STATUS
+        console.log('Status da resposta:', response.status);
         return response.json();
     })
     .then(data => {
-        console.log('Resposta da API:', data); // <--- LOG DA RESPOSTA
+        console.log('Resposta da API:', data);
         alert('Chat enviado! Confira o console para detalhes.');
     })
     .catch(error => {
-        console.error('Erro completo:', error); // <--- LOG DE ERRO
+        console.error('Erro completo:', error);
     });
+    
 });
+
