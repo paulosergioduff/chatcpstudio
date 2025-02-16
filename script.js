@@ -135,15 +135,19 @@ document.getElementById('user-input').addEventListener('keydown', function(event
 
 // Lógica para o botão "Novo Chat"
 document.getElementById('new-chat-btn').addEventListener('click', function() {
-    // Limpa o histórico na memória
-    chatHistory = [];
-    // Limpa o histórico no localStorage
-    localStorage.removeItem('chatHistory');
-    // Limpa o conteúdo do chat na interface
-    document.getElementById('chat-box').innerHTML = '';
-    // Limpa o campo de entrada de texto
-    document.getElementById('user-input').value = '';
+    const confirmacao = window.confirm("Tem certeza de que deseja iniciar um novo chat? Isso apagará a conversa atual.");
+    if (confirmacao) {
+        // Limpa o histórico na memória
+        chatHistory = [];
+        // Limpa o histórico no localStorage
+        localStorage.removeItem('chatHistory');
+        // Limpa o conteúdo do chat na interface
+        document.getElementById('chat-box').innerHTML = '';
+        // Limpa o campo de entrada de texto
+        document.getElementById('user-input').value = '';
+    }
 });
+
 
 // Adicione este código ao final do script.js
 document.getElementById('post-btn').addEventListener('click', function() {
