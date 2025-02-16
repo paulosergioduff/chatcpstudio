@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    width: 400px;
+    height: 90vh; /* Altura máxima da tela */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Barra no topo para o botão azul */
+.top-bar {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    text-align: center; /* Centraliza o botão */
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Barra de rolagem vertical */
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-box .message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.chat-box .user {
+    background-color: #e1ffc7;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.chat-box .ai {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.input-area {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 10px; /* Espaço entre os elementos */
+    flex-shrink: 0; /* Impede que a área de entrada diminua */
+}
+
+textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    flex-shrink: 0; /* Impede que os botões diminuam */
+}
+
+.btn.green {
+    background-color: #28a745;
+}
+
+.btn.red {
+    background-color: #dc3545;
+}
+
+.btn.blue {
+    background-color: #007bff;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Estilo para o botão amarelo */
+.btn.yellow {
+    background-color: #ffc107; /* Cor amarela */
+    color: black; /* Cor do texto para contraste */
+}
+
+.btn.yellow:hover {
+    background-color: #e0a800; /* Tom de amarelo mais escuro para o hover */
+}
+
+/* Manter os outros estilos dos botões */
+.btn.green {
+    background-color: #28a745;
+}
+
+.btn.red {
+    background-color: #dc3545;
+}
+
+.btn.blue {
+    background-color: #007bff;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
