@@ -6,9 +6,9 @@ from datetime import datetime
 # Criar uma lista para armazenar o histórico do chat (simulação)
 chatHistory = []
 
-# Criar a pasta 'memories' se não existir
-if not os.path.exists("memories"):
-    os.makedirs("memories")
+# Criar a pasta 'memories/Temporal_Lobe' se não existir
+if not os.path.exists("memories/Temporal_Lobe"):
+    os.makedirs("memories/Temporal_Lobe")
 
 class RequestHandler(SimpleHTTPRequestHandler):
     def do_POST(self):
@@ -23,7 +23,7 @@ class RequestHandler(SimpleHTTPRequestHandler):
                 
                 # Gerar o nome do arquivo com timestamp
                 timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-                file_path = os.path.join("memories", f"{timestamp}.json")
+                file_path = os.path.join("memories", "Temporal_Lobe", f"{timestamp}.json")  # Caminho atualizado
                 
                 # Salvar os dados no arquivo
                 with open(file_path, "w", encoding="utf-8") as f:
