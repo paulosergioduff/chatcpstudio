@@ -1,2 +1,3 @@
 /memories//memories/Temporal_Lobe/*
 !/memories/Temporal_Lobe/.gitkeep
+modules/llm/llama.cpp/*
